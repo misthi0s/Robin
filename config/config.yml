@@ -1,0 +1,38 @@
+# Name of payload generated at runtime
+name: Robin.exe
+# Technique to use for persistence (service, startup, registry)
+technique: service
+# Password to use to encrypt config in payload
+encryptkey: OchentaFleurCuatroManoShock
+# Service options
+service:
+  # Name of Service
+  name: Robin
+  # Description of Service
+  description: Test Robin Service
+  # Path to executable or DLL to launch on service execute
+  path: C:\Windows\System32\calc.exe
+  # Determine if payload is DLL file; if so, will use the "ServiceDll" technique
+  dll: false
+  # User to run service as
+  # NOTE: Use "SYSTEM" if you want to run service as LOCAL SYSTEM. Otherwise, Username/Password will be required.
+  # Username will need to be full domain\workgroup username, IE "DOMAIN\Robin"
+  runas: SYSTEM
+  # Password (Only used if RunAs is not "SYSTEM")
+  password: 
+# Shortcut options (will be placed in Startup folder)
+startup:
+  # Name of shortcut file (.lnk will be appended)
+  name: Robin
+  # Path to executable to launch on shortcut execute
+  path: C:\Windows\system32\calc.exe
+# Registry options
+registry:
+  # Persistence method/key (winlogon, run, runonce, autorun)
+  key: run
+  # Path to executable to launch on service execute
+  path: C:\Windows\System32\calc.exe
+  # For keys that support it, choose HKLM (requires administrative rights) or HKCU variant
+  hive: HKCU
+  # Name of custom Registry value where required (Run/RunOnce keys)
+  customname: Robin
